@@ -25,7 +25,6 @@ TOKEN_TYPES = {
     'ONOT_EQUALS': r'!=', 'OLESS_EQUALS': r'<=', 'OGREATER_EQUALS': r'>=', 'OLESS_THAN': r'<',
     'OGREATER_THAN': r'>', 'WHITESPACE': r'\s', 'EOF': r'\$', 'EPSILON': r'\ε',
 }
-#L, N, P1, P2, K, I, C, C1, C2, O, V, M, T, F, E, G, 
 
 def tokenize(input_string):
     tokens = []
@@ -132,14 +131,25 @@ class SimpleParser:
                     else:
                         return ["f", "d"]
             
-            elif current_token == "L":
+            elif non_terminal == "l":
                 return ["L"]
 
             elif non_terminal == "p2":
                 return ["P2"]
-
+            
+            elif non_terminal == "a":
+                if current_token == "N":
+                    return ["v", "h"]
+                elif current_token == "L":
+                    return ["v", "r"]
+                else:
+                    return["EPSILON"]
+                
             elif non_terminal == "r":
-                return ["l", "r"]
+                if current_token == "L":
+                    return ["EPSILON"]
+                else:
+                    return ["l", "r"]
             
             elif non_terminal == "k":
                 return ["K"]
@@ -147,8 +157,11 @@ class SimpleParser:
             elif non_terminal == "i":
                 return ["I"]
 
-            elif non_terminal == "h":
-                return ["n", "h"]
+            elif  non_terminal == "h":
+                if current_token == "N":
+                    return ["n", "h"]
+                else:
+                    return["EPSILON"]
 
             elif non_terminal == "c":
                 return ["C"]
