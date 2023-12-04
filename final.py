@@ -419,10 +419,10 @@ def procesar_formulario():
     try:
         tree = parser.parse(texto)
         print(tree.pretty())
-        print("tu codigo si funcia")
+        print("Simon Hija")
         bandera = True
     except Exception as e:
-        print(f"tu codigo no funcia: {e}")
+        print(f"No jala vos hija : {pila}")
         bandera = False
         print(bandera)
     return render_template('formulario.html', bandera=bandera, texto=texto, pila=pila)
