@@ -1,0 +1,68 @@
+
+input{
+    background-color: #857aeb;
+    color: #030f63;
+    border: none; 
+    width:100px;
+    height:30px;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+input:hover {
+    background-color: #ffffff; /* Cambia el color de fondo cuando se pasa el mouse */
+}
+
+form{
+    padding-top: 120px;
+    text-align: center; 
+}
+
+.text-area{
+    color: rgb(255, 255, 255);
+    width:95%;
+    height:350px;
+    border-color: #07106d;
+    background-color: rgb(48, 48, 48);
+    border-radius: 15px;
+    overflow: auto;
+    resize: vertical;
+    max-height: 350px; 
+    padding: 10px 20px; 
+}
+
+body{
+    background-image: url('../static/jamco.jpg');
+    background-size: cover;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.div-bandera {
+    margin-left: 12px;
+    background-color: #b8b8b8;
+    width:98%;
+    height:50px;
+    border-color: #07106d;
+}
+
+.txtarea-pila{
+    margin-top: 10px;
+    overflow: auto;
+    resize: vertical;
+    color: rgb(255, 255, 255);
+    width:95.5%;
+    height:180px;
+    border-color: #07106d;
+    background-color: rgb(48, 48, 48);
+    border-radius: 15px;
+    overflow: auto;
+    resize: vertical;
+    max-height: 350px; 
+    padding: 10px 20px;
+    margin-left: 12px;
+}

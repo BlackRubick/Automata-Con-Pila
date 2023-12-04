@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página con Textarea</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form method="POST" action="/procesar_formulario">
+        <textarea class="text-area" name="texto" rows="4" cols="50">{{ texto }}</textarea>
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    {% if bandera != '' %}
+        <div class="div-bandera">
+            {% if bandera %}
+                <p>El codigo si funciona</p>
+            {% else %}
+                <p>El codigo no funciona</p>
+            {% endif %}
+        </div>
+        {% if bandera %}
+    <div class="txtarea-pila">
+        {% for elemento in pila %}
+            <li>{{ elemento }}</li>
+        {% endfor %}
+        <p>Análisis sintáctico CORRECTO de la pila</p>
+    </div>
+    {% else %}
+    <div class="txtarea-pila">
+        {% for elemento in pila %}
+            <li>{{ elemento }}</li>
+        {% endfor %}
+        <p>Análisis sintáctico INCORRECTO de la pila</p>
+    </div>
+    {% endif %}
+
+    {% endif %}
+</body>
+</html>
